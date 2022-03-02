@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fooddapp/pages/home/main_food_page.dart';
 import 'package:fooddapp/utils/dimensions.dart';
 import 'package:fooddapp/widgets/app_column.dart';
 import 'package:fooddapp/widgets/app_icon.dart';
@@ -6,6 +7,7 @@ import 'package:fooddapp/widgets/big_text.dart';
 import 'package:fooddapp/widgets/expandable_text_widget.dart';
 import 'package:fooddapp/widgets/icons_and_text_widgets.dart';
 import 'package:fooddapp/widgets/small_text.dart';
+import 'package:get/get.dart';
 
 class PopularFoodDetail extends StatelessWidget {
   const PopularFoodDetail({Key? key}) : super(key: key);
@@ -34,7 +36,11 @@ class PopularFoodDetail extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  AppIcon(icon: Icons.arrow_back_ios),
+                  GestureDetector(
+                      onTap: () {
+                        Get.to(() => MainFoodPage());
+                      },
+                      child: AppIcon(icon: Icons.arrow_back_ios)),
                   AppIcon(icon: Icons.shopping_cart_outlined)
                 ],
               )),
